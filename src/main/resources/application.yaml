@@ -1,0 +1,33 @@
+server:
+   port: 8080
+   servlet:
+      context-path: /common-shell
+spring:
+   devtools:
+      restart:
+         enabled: true # 热部署开关，false即不启用热部署
+         exclude: test/** # 指定目录不更新
+#         additional-paths: src/main/java # 指定热部署的目录
+   main:
+      allow-bean-definition-overriding: true
+
+# log logging.path 和 logging.file 同时配置只会生效一个 
+logging:
+   path: /opt/log/common-shell/
+   file: /opt/log/common-shell/common-shell.log
+   level:
+      root: DEBUG
+#      org:
+#         hibernate: DEBUG
+# ssh
+ssh:
+   host: 127.0.0.1
+   username: root
+   password: 123/abc
+   port: 22
+# ftp
+ftp:
+   host: 127.0.0.1
+   port: 21
+   username: null
+   password: null  
